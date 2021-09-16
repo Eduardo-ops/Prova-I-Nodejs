@@ -1,7 +1,11 @@
 const subjectDB = []
 
+var id = 1
+
 const createSubject = subject => {
+    subject.id = id
     subjectDB.push(subject)
+    id = id + 1
 }
 
 const getAllSubjects = () => subjectDB
@@ -27,6 +31,7 @@ const deleteSubject = subjectID => {
 module.exports = {
     createSubject,
     getAllSubjects,
+    subjectDB,
     updateSubject,
     deleteSubject
 }
